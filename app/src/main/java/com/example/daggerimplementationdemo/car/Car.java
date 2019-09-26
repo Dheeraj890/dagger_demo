@@ -14,9 +14,11 @@ Engine engine;
 
 Wheel wheel;
 
+private Driver driver;
 
    @Inject
-    public Car(Engine engine, Wheel wheel) {
+    public Car(Driver driver,Engine engine, Wheel wheel) {
+       this.driver=driver;
         this.engine = engine;
         this.wheel = wheel;
     }
@@ -24,7 +26,7 @@ Wheel wheel;
     public void drive(){
 
        engine.start();
-        Log.d(TAG,"driving");
+        Log.d(TAG,"driver "+driver+" drives "+this );
     }
 
     @Inject
@@ -35,4 +37,4 @@ Wheel wheel;
 }
 
 //Video to continue from 6
-//Link -:  https://www.youtube.com/watch?v=3itfTHKFOqY
+//Link -:  https://www.youtube.com/watch?v=V-CF0BGA-3w

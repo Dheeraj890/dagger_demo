@@ -4,6 +4,8 @@ import com.example.daggerimplementationdemo.car.Rims;
 import com.example.daggerimplementationdemo.car.Tires;
 import com.example.daggerimplementationdemo.car.Wheel;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -26,6 +28,7 @@ public abstract class WheelModule {
     }
 
 
+    @Singleton
     @Provides
     static Wheel provideWheels(Rims rims, Tires tires){
 

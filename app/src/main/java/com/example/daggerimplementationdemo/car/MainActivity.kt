@@ -10,6 +10,9 @@ class MainActivity : AppCompatActivity() {
     @set:Inject
     internal  var car: Car?=null
 
+
+    @set:Inject
+    internal  var car1: Car?=null
     @set:Inject
     internal var remote: Remote?=null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +30,13 @@ class MainActivity : AppCompatActivity() {
         var component=DaggerCarComponent.builder().horsePower(150).engineCapacity(1400).build()
          component.inject(this)
 
+
         car=component.car
         car?.drive()
         car?.enableRemote(remote)
 
+        car1=component.car
+        car1?.drive()
+        car1?.enableRemote(remote)
     }
 }
